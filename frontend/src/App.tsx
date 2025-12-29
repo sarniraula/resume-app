@@ -31,7 +31,6 @@ function App() {
 
       // Add text fallback if needed, but we rely on files for now
       // formData.append('resumeText', '');
-      console.log(API_BASE_URL)
 
       const res = await axios.post(`${API_BASE_URL}/analyze`, formData, {
         headers: { 'Content-Type': 'multipart/form-data' }
