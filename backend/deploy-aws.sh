@@ -78,7 +78,7 @@ echo "🚀 Starting application with PM2..."
 pm2 delete resume-checker-backend 2>/dev/null || true
 pm2 start ecosystem.config.js
 pm2 save
-pm2 startup
+sudo env PATH=$PATH:/usr/bin pm2 startup systemd -u ubuntu --hp /home/ubuntu
 
 # Install and configure nginx (optional but recommended)
 echo "🌐 Installing nginx..."
