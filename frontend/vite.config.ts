@@ -9,14 +9,14 @@ export default defineConfig({
     tailwindcss()
   ],
   server: {
-    proxy: {
-      '/api': {
-        target: 'http://localhost:5001',
-        changeOrigin: true,
-        secure: false,
-        // Optional: rewrite if you want to remove '/api' prefix on backend
-        rewrite: (path) => path.replace(/^\/api/, '')
-      },
-    },
+    // proxy: {
+    //   '/api': {
+    //     target: 'http://localhost:5001',
+    //     changeOrigin: true,
+    //     secure: false,
+    //     // Optional: rewrite if you want to remove '/api' prefix on backend
+    //     rewrite: (path) => path.replace(/^\/api/, '')
+    //   },
+    // },
   },
 })

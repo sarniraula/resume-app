@@ -17,7 +17,7 @@ interface AnalysisResult {
 }
 
 // API Configuration
-const API_BASE_URL = import.meta.env.VITE_API_URL || '/api';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 function App() {
   const [resumeFile, setResumeFile] = useState<File | null>(null);
@@ -31,6 +31,7 @@ function App() {
 
       // Add text fallback if needed, but we rely on files for now
       // formData.append('resumeText', '');
+      console.log(API_BASE_URL)
 
       const res = await axios.post(`${API_BASE_URL}/analyze`, formData, {
         headers: { 'Content-Type': 'multipart/form-data' }
