@@ -5,6 +5,7 @@
 # ============================================
 # This script sets up the backend on a fresh Ubuntu 22.04 EC2 instance
 # Run this script as: bash deploy-aws.sh
+APP_DIR="/home/ubuntu/resume-app/backend" # Update this path to your actual application directory
 
 set -e  # Exit on error
 
@@ -50,9 +51,10 @@ curl -s http://localhost:11434/api/tags | grep -q "llama3" && echo "Ollama is re
 
 # Navigate to application directory
 echo "📂 Setting up application..."
-cd /home/ubuntu/resume-checker-backend || {
+cd "$APP_DIR" || {
     echo "❌ Application directory not found. Please clone your repository first."
-    echo "Run: git clone <your-repo-url> /home/ubuntu/resume-checker-backend"
+    echo "Expected path: $APP_DIR"
+    echo "Run: git clone <your-repo-url> $APP_DIR"
     exit 1
 }
 
