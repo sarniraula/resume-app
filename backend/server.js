@@ -16,7 +16,7 @@ const allowedOrigins = [
   'http://localhost:5173',  // Vite dev server
   'http://localhost:5174',
   'http://localhost:3000',
-  process.env.FRONTEND_URL,  // Production Vercel URL (set via env variable)
+  'https://resume-app-fawn-eight.vercel.app',
 ];
 
 // Remove undefined/null values
