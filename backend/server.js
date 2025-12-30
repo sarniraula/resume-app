@@ -54,8 +54,9 @@ app.get('/health', (req, res) => {
 // Analyze Route
 app.post('/analyze', upload.fields([{ name: 'resume' }, { name: 'jd' }]), async (req, res) => {
   try {
-    const resumeFile = req.files['resume'] ? req.files['resume'][0] : null;
-    const jdFile = req.files['jd'] ? req.files['jd'][0] : null;
+    const files = req.files || {};
+    const resumeFile = files.resume ? files.resume[0] : null;
+    const jdFile = files.jd ? files.jd[0] : null;
 
     let resumeText = req.body.resumeText || '';
     let jdText = req.body.jdText || '';
